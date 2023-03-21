@@ -1,0 +1,69 @@
+import random
+from os import system
+opcijas = ["akmens", "papīrs", "šķēres"]
+
+akmens = """
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+"""
+
+papirs = """
+    _______
+---'   ____}____
+          ______}
+          _______}
+         _______}
+---.__________}
+"""
+
+skeres = """
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+"""
+
+
+def Spēlēt():
+    
+    speletajs = input("Izvēlies akmens, šķēres vai papīrs: ")
+    dators = random.choice(opcijas)
+
+
+    print("Spēlētājs izvēlējās:")
+    if speletajs == "akmens":
+        print(akmens)
+    elif speletajs == "papīrs":
+        print(papirs)
+    elif speletajs == "šķēres":
+        print(skeres)
+
+
+    print("Dators izvēlējās:")
+    if dators == "akmens":
+        print(akmens)
+    elif dators == "papīrs":
+        print(papirs)
+    elif dators == "šķēres":
+        print(skeres)
+
+
+    if speletajs == dators:
+        print("Neizšķirts!")
+    elif speletajs == "akmens" and dators == "šķēres":
+        print("Spēlētājs uzvar!!")
+    elif speletajs == "papīrs" and dators == "akmens":
+        print("Spēlētājs uzvar!!")
+    elif speletajs == "šķēres" and dators == "papīrs":
+        print("Spēlētājs uzvar!!")
+    else:
+        print("Dators uzvar :( ")
+
+
+Spēlēt()
